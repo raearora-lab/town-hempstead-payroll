@@ -1,4 +1,17 @@
 /* Fixed five-column layout: every column remains within the viewport. */
+.table-wrap {
+  max-height: min(68vh, 760px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-bottom: 1px solid var(--gray30);
+  scrollbar-gutter: stable;
+}
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0 1px 0 var(--gray30);
+}
 table { width: 100%; table-layout: fixed; }
 th, td { min-width: 0; overflow-wrap: anywhere; word-break: normal; }
 th:first-child, td:first-child { width: 7%; }
