@@ -20,6 +20,7 @@ th:nth-child(3), td:nth-child(3) { width: 16%; text-align: right; font-family: '
 th:nth-child(4), td:nth-child(4) { width: 27%; }
 th:nth-child(5), td:nth-child(5) { width: 25%; text-align: left; }
 .not-reported { color: var(--gray70); font-size: 13px; }
+.pager { display: none; }
 
 @media (max-width: 700px) {
   .table-wrap { overflow-x: visible; }

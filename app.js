@@ -1,4 +1,4 @@
-const PAGE_SIZE = 50;
+const PAGE_SIZE = Number.MAX_SAFE_INTEGER;
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 let records = [];
 let filtered = [];
@@ -20,7 +20,7 @@ function render() {
       <td>${escapeHtml(row.category)}</td>
     </tr>`).join('');
   $('result-count').textContent = `${filtered.length.toLocaleString()} record${filtered.length === 1 ? '' : 's'}`;
-  $('page-status').textContent = `Page ${currentPage} of ${totalPages}`;
+  $('page-status').textContent = 'All records shown';
   $('previous').disabled = currentPage === 1;
   $('next').disabled = currentPage === totalPages;
   renderPages(totalPages);
