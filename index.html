@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Search and review 2025–26 NYSLRS-reported earnings for Town of Hempstead employees.">
+  <title>Town of Hempstead Payroll Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="#">PUBLIC PAY / NY</a>
+    <nav aria-label="Primary"><a href="#data">Data</a><a href="#methodology">Methodology</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">PUBLIC RECORDS · 2025–26 REPORTING YEAR</p>
+        <h1>Town of Hempstead<br>Payroll Explorer</h1>
+        <p class="dek">Search and rank every Town of Hempstead employee reported to the New York State and Local Retirement System.</p>
+      </div>
+      <div class="hero-mark" aria-hidden="true">TOH<br><span>2,716</span></div>
+    </section>
+
+    <section class="notice" aria-label="Important data note">
+      <strong>These are reported earnings—not base salaries.</strong>
+      <span>The figures are pensionable earnings and can include overtime and other extras. Amounts displayed by the source are rounded to whole dollars.</span>
+    </section>
+
+    <section class="metrics" aria-label="Summary">
+      <article><span>Employees</span><strong id="employee-count">—</strong><small>reported records</small></article>
+      <article><span>Total reported pay</span><strong id="total-pay">—</strong><small>source aggregate</small></article>
+      <article><span>Highest reported pay</span><strong id="highest-pay">—</strong><small id="highest-name">—</small></article>
+      <article><span>Average reported pay</span><strong id="average-pay">—</strong><small>source total ÷ records</small></article>
+    </section>
+
+    <section class="dataset" id="data">
+      <div class="section-heading">
+        <div><p class="eyebrow">COMPLETE DATASET</p><h2>Employee earnings</h2></div>
+        <a class="download" href="data/payroll.csv" download>Download CSV <span>↓</span></a>
+      </div>
+
+      <div class="controls">
+        <label class="search-label" for="search">Search employee</label>
+        <input id="search" type="search" placeholder="Enter a name…" autocomplete="off">
+        <label class="sort-label" for="sort">Sort records</label>
+        <select id="sort">
+          <option value="pay-desc">Pay: high to low</option>
+          <option value="pay-asc">Pay: low to high</option>
+          <option value="name-asc">Name: A–Z</option>
+          <option value="name-desc">Name: Z–A</option>
+        </select>
+      </div>
+
+      <div class="result-bar"><span id="result-count">Loading records…</span><span id="page-status"></span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Rank</th><th scope="col">Employee</th><th scope="col">Category</th><th scope="col">Reported pay</th></tr></thead>
+          <tbody id="payroll-body"></tbody>
+        </table>
+      </div>
+      <div class="pager">
+        <button id="previous" type="button">← Previous</button>
+        <div id="pages" aria-label="Pagination"></div>
+        <button id="next" type="button">Next →</button>
+      </div>
+    </section>
+
+    <section class="methodology" id="methodology">
+      <div><p class="eyebrow">READ THIS FIRST</p><h2>What the numbers mean</h2></div>
+      <div class="method-grid">
+        <article><span>01</span><h3>Source</h3><p>SeeThroughNY’s municipal payroll database, derived from records supplied by the New York State and Local Retirement System.</p></article>
+        <article><span>02</span><h3>Coverage</h3><p>The reporting year ends March 31. Retirees and certain post-retirement workers may not appear under the source methodology.</p></article>
+        <article><span>03</span><h3>Interpretation</h3><p>“Total pay” is pensionable earnings, including overtime and other extras. It should not be described as an employee’s authorized base salary.</p></article>
+      </div>
+      <div class="source-links">
+        <a id="source-link" href="https://seethroughny.net/payrolls/towns" target="_blank" rel="noreferrer">View source search ↗</a>
+        <a href="https://seethroughny.net/data-notes/municipal/" target="_blank" rel="noreferrer">Read source methodology ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>Town of Hempstead Payroll Explorer</span><span>Independent public-records presentation · Not affiliated with the Town of Hempstead</span></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>
