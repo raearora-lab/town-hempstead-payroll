@@ -54,6 +54,7 @@ def parse_rows(markup: str) -> list[dict]:
                 "rate_of_pay": fields.get("Rate of Pay", ""),
                 "pay_year": fields.get("Pay Year", YEAR),
                 "pay_basis": fields.get("Pay Basis", ""),
+                "benefits": "Not individually reported by source",
             }
         )
     return records

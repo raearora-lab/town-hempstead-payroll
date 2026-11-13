@@ -1,0 +1,21 @@
+/* Fixed five-column layout: every column remains within the viewport. */
+table { width: 100%; table-layout: fixed; }
+th, td { min-width: 0; overflow-wrap: anywhere; word-break: normal; }
+th:first-child, td:first-child { width: 7%; }
+th:nth-child(2), td:nth-child(2) { width: 25%; }
+th:nth-child(3), td:nth-child(3) { width: 16%; text-align: right; font-family: 'IBM Plex Mono', monospace; font-weight: 500; }
+th:nth-child(4), td:nth-child(4) { width: 27%; }
+th:nth-child(5), td:nth-child(5) { width: 25%; text-align: left; }
+.not-reported { color: var(--gray70); font-size: 13px; }
+
+@media (max-width: 700px) {
+  .table-wrap { overflow-x: visible; }
+  th, td { padding: 10px 6px; font-size: 11px; line-height: 1.3; }
+  th { font-size: 10px; }
+  th:first-child, td:first-child { width: 8%; }
+  th:nth-child(2), td:nth-child(2) { width: 23%; }
+  th:nth-child(3), td:nth-child(3) { width: 20%; }
+  th:nth-child(4), td:nth-child(4) { width: 26%; display: table-cell; }
+  th:nth-child(5), td:nth-child(5) { width: 23%; display: table-cell; }
+  .not-reported { font-size: 10px; }
+}

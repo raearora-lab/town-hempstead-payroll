@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="table-fix.css">
 </head>
 <body>
   <header class="masthead">
@@ -27,8 +28,8 @@
     </section>
 
     <section class="notice" aria-label="Important data note">
-      <strong>These are reported earnings—not base salaries.</strong>
-      <span>The figures are pensionable earnings and can include overtime and other extras. Amounts displayed by the source are rounded to whole dollars.</span>
+      <strong>Earnings are reported; employee-level benefits are not.</strong>
+      <span>The source reports pensionable earnings, including overtime and other extras—not base salary. Town financials report benefits only in aggregate, so each record explicitly identifies benefits as not individually reported rather than inventing an amount.</span>
     </section>
 
     <section class="metrics" aria-label="Summary">
@@ -59,7 +60,7 @@
       <div class="result-bar"><span id="result-count">Loading records…</span><span id="page-status"></span></div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th scope="col">Rank</th><th scope="col">Employee</th><th scope="col">Category</th><th scope="col">Reported pay</th></tr></thead>
+          <thead><tr><th scope="col" aria-label="Rank">#</th><th scope="col">Employee</th><th scope="col">Reported earnings</th><th scope="col">Benefits</th><th scope="col">Category</th></tr></thead>
           <tbody id="payroll-body"></tbody>
         </table>
       </div>
@@ -75,11 +76,12 @@
       <div class="method-grid">
         <article><span>01</span><h3>Source</h3><p>SeeThroughNY’s municipal payroll database, derived from records supplied by the New York State and Local Retirement System.</p></article>
         <article><span>02</span><h3>Coverage</h3><p>The reporting year ends March 31. Retirees and certain post-retirement workers may not appear under the source methodology.</p></article>
-        <article><span>03</span><h3>Interpretation</h3><p>“Total pay” is pensionable earnings, including overtime and other extras. It should not be described as an employee’s authorized base salary.</p></article>
+        <article><span>03</span><h3>Interpretation</h3><p>“Reported earnings” are pensionable earnings, including overtime and other extras. The source provides neither authorized base salary nor employee-level benefit cost. Benefits are therefore marked “Not individually reported” for every employee.</p></article>
       </div>
       <div class="source-links">
         <a id="source-link" href="https://seethroughny.net/payrolls/towns" target="_blank" rel="noreferrer">View source search ↗</a>
         <a href="https://seethroughny.net/data-notes/municipal/" target="_blank" rel="noreferrer">Read source methodology ↗</a>
+        <a href="https://www.hempsteadny.gov/Archive.aspx?AMID=44" target="_blank" rel="noreferrer">Town aggregate financials ↗</a>
       </div>
     </section>
   </main>

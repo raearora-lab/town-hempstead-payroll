@@ -15,8 +15,9 @@ function render() {
     <tr>
       <td>${row.rank.toLocaleString()}</td>
       <td>${escapeHtml(row.name)}</td>
-      <td>${escapeHtml(row.category)}</td>
       <td>${money.format(row.total_pay)}</td>
+      <td class="not-reported">${escapeHtml(row.benefits || 'Not individually reported')}</td>
+      <td>${escapeHtml(row.category)}</td>
     </tr>`).join('');
   $('result-count').textContent = `${filtered.length.toLocaleString()} record${filtered.length === 1 ? '' : 's'}`;
   $('page-status').textContent = `Page ${currentPage} of ${totalPages}`;
